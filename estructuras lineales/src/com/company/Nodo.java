@@ -3,9 +3,7 @@ package com.company;
 public class Nodo {
     private String nombre;
 
-    public void setIndice(int indice) {
-        this.indice = indice;
-    }
+
 
     private int indice = 0;
     private Nodo sig;
@@ -48,8 +46,10 @@ public class Nodo {
     }
 
     public int getIndice() {
-        return indice;
+        return this.indice;
     }
 
-
+    public void setIndice(int indice) {
+        this.indice = indice;
+    }
 }
