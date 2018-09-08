@@ -24,12 +24,15 @@ Nodo nodo;
     arbol.agregarDato(nodo6);
 
 
+
     System.out.println("agrupacion pre-orden:");
     arbol.preOrden(arbol.getRaiz());
     System.out.println("\n\nagrupacion post-orden:");
     arbol.postOrden(arbol.getRaiz());
     System.out.println("\n\nagrupacion in-orden:");
     arbol.inOrden(arbol.getRaiz());
+    System.out.println("\n\nagrupacion por nivel: ");
+    arbol.imprimirNivel();
 
 
 
