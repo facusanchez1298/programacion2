@@ -3,48 +3,37 @@ package com.company;
 import java.util.Scanner;
 
 public class Main {
-public Nodo raiz;
+Arbol arbol;
+Nodo nodo;
 
     public static void main(String[] args) {
-    Nodo raiz = new Nodo(pedirDato());
-    crearArbol(raiz);
-        System.out.println("Recorrido Preorden: ");
-        preOrden(raiz);
+    Nodo nodo1 = new Nodo(1);
+    Nodo nodo2 = new Nodo(2);
+    Nodo nodo3 = new Nodo(3);
+    Nodo nodo4 = new Nodo(4);
+    Nodo nodo5 = new Nodo(5);
+    Nodo nodo6 = new Nodo(6);
 
-    }
+    Arbol arbol = new Arbol();
 
-    public static void crearArbol(Nodo raiz){
-        if(raiz == null){
-            raiz.setDato(pedirDato());
-        }
-        else{
-            int a = pedirDato();
-            if (a < raiz.getDato()){
-                raiz.setDer(new Nodo(a));
-            }
-            if(a > raiz.getDato()){
-                raiz.setDer(new Nodo(a));
-            }
-        }
+    arbol.agregarDato(nodo4);
+    arbol.agregarDato(nodo2);
+    arbol.agregarDato(nodo5);
+    arbol.agregarDato(nodo1);
+    arbol.agregarDato(nodo3);
+    arbol.agregarDato(nodo6);
 
 
-    }
-
-    public static int pedirDato(){
-        int dato;
-        Scanner scan = new Scanner(System.in);
-        System.out.print("ingrese un valor para el nodo");
-        dato = scan.nextInt();
-        return dato;
-    }
-
-    private static void preOrden(Nodo raiz) {
-        if (raiz != null) {
-            System.out.print(raiz.getDato() + " - ");
-            preOrden(raiz.getIzq());
-            preOrden(raiz.getDer());
-        }
-    }
+    System.out.println("agrupacion pre-orden:");
+    arbol.preOrden(arbol.getRaiz());
+    System.out.println("\n\nagrupacion post-orden:");
+    arbol.postOrden(arbol.getRaiz());
+    System.out.println("\n\nagrupacion in-orden:");
+    arbol.inOrden(arbol.getRaiz());
 
 
+
+
+
+}
 }
